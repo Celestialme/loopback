@@ -1,12 +1,12 @@
 // main.cpp
 
 #include "common.h"
-
+#include <iostream>
 int do_everything(int argc, LPCWSTR argv[]);
 
 int _cdecl wmain(int argc, LPCWSTR argv[]) {
     HRESULT hr = S_OK;
-     cout << "Hello, windows (8, c++)" << endl;
+       std::cout << "Hello world!";
     hr = CoInitialize(NULL);
     if (FAILED(hr)) {
         ERR(L"CoInitialize failed: hr = 0x%08x", hr);
