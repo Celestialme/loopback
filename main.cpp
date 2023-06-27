@@ -175,7 +175,7 @@ int do_everything(int argc, LPCWSTR argv[]) {
 
     // reopen the file in read/write mode
     MMIOINFO mi = {0};
-    prefs.m_hFile = mmioOpen(const_cast<LPWSTR>(prefs.m_szFilename), &mi, MMIO_READWRITE);
+    prefs.m_hFile = mmioOpenA(const_cast<LPWSTR>(prefs.m_szFilename), &mi, MMIO_READWRITE);
     if (NULL == prefs.m_hFile) {
         ERR(L"mmioOpen(\"%ls\", ...) failed. wErrorRet == %u", prefs.m_szFilename, mi.wErrorRet);
         return -__LINE__;
