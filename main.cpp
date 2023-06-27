@@ -4,7 +4,7 @@
 
 int do_everything(int argc, LPCWSTR argv[]);
 
-int _cdecl main(int argc, LPCWSTR argv[]) {
+int _cdecl wmain(int argc, LPCWSTR argv[]) {
     HRESULT hr = S_OK;
 
     hr = CoInitialize(NULL);
