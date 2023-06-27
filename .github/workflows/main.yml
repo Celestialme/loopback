@@ -18,7 +18,7 @@ jobs:
 
       - name: Build C++ program
         run: |
-          g++ -o myprogram.exe main.cpp guid.cpp loopback-capture.cpp prefs.cpp -lwinmm -lole32 -DUNICODE -municode -lksuser -lAvrt -mwindows
+          g++ -o myprogram.exe main.cpp guid.cpp loopback-capture.cpp prefs.cpp -lwinmm -lole32 -DUNICODE -municode -lksuser -lAvrt -mwindows -static-libgcc -static-libstdc++
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
