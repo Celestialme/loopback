@@ -1,0 +1,27 @@
+name: C++ Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build C++ program
+        run: |
+          g++ -o myprogram.exe main.cpp
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: myprogram
+          path: myprogram.exe
